@@ -1,0 +1,62 @@
+name: 持续集成检查
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Skill 构建与回归
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    defaults:
+      run:
+        working-directory: html-editor
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: html-editor/package-lock.json
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 检查类型
+        run: npm run typecheck
+
+      - name: 运行回归
+        run: npm test
+
+      - name: 构建工作台与服务
+        run: npm run build
+
+      - name: 检查预构建资源
+        shell: bash
+        run: |
+          test -f assets/editor-app/index.html
+          test -n "$(find assets/editor-app/assets -name '*.js' -print -quit)"
+          test -n "$(find assets/editor-app/assets -name '*.css' -print -quit)"
+
+      - name: 检查 README 图片
+        working-directory: .
+        shell: bash
+        run: |
+          test -f README.md
+          test -f docs/images/01-preview-mode.png
+          test -f docs/images/02-edit-mode.png
+          test -f docs/images/03-page-mode.png
+          test -f docs/images/04-drawer-editing.png
+          test -f docs/images/05-workflow.png
+          test -f docs/images/06-capability-map.png
+          test -f docs/images/07-architecture.png

@@ -1,0 +1,14 @@
+<!doctype html>
+<html><body>
+<div data-proto-app>
+  <button data-page="employees">查看全部</button>
+  <section data-page-scope="page:dashboard"><h1 class="page-title">仪表盘</h1></section>
+</div>
+<script>
+  const groups = [
+    { title: "总览", items: [["dashboard", "仪表盘"]] },
+    { title: "人员中心", items: [["employees", "员工"], ["audit", "审计日志"]] }
+  ];
+  function renderPage(id) { return id; }
+</script>
+</body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<body>
+  <div data-proto-app>
+    <nav aria-label="业务导航">
+      <button data-page-key="home" aria-current="page">首页</button>
+      <div class="menu-branch">
+        <button class="menu-node">客户管理</button>
+        <div class="menu-children">
+          <button data-page-key="customers">客户列表</button>
+          <button data-page-key="contacts">联系人</button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section data-page-scope="dashboard">首页内容</section>
+      <section data-page-scope="list" hidden>列表内容</section>
+    </main>
+  </div>
+  <script>
+    const pages = {
+      home: { title: "我的首页", group: "工作台", scope: "dashboard" },
+      customers: { title: "客户列表", group: "客户管理", scope: "list" },
+      contacts: { title: "联系人", group: "客户管理", scope: "list" }
+    };
+    function openPage(key) { return pages[key]; }
+  </script>
+</body>
+</html>

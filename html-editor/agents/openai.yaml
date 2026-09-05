@@ -1,0 +1,7 @@
+interface:
+  display_name: "HTML 原型编辑器"
+  short_description: "本地预览并可视化修改已有的自包含单 HTML 原型"
+  brand_color: "#2563EB"
+  default_prompt: "使用 $html-editor 打开并编辑这个自包含 HTML 原型。"
+policy:
+  allow_implicit_invocation: false

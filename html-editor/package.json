@@ -1,0 +1,42 @@
+{
+  "name": "prototype-html-editor-skill",
+  "private": true,
+  "version": "0.1.0",
+  "description": "用于本地预览、可视化编辑和版本导出已有自包含单 HTML 原型的 Codex Skill",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lin96008-maxlin/prototype-html-editor.git"
+  },
+  "homepage": "https://github.com/lin96008-maxlin/prototype-html-editor#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:app && npm run build:server",
+    "build:app": "vite build",
+    "build:server": "node build-server.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "lucide-react": "^0.468.0",
+    "moveable": "^0.53.0",
+    "parse5": "^7.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "selecto": "^1.26.3",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

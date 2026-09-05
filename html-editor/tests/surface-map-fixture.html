@@ -1,0 +1,21 @@
+<!doctype html><html><head><style>
+.page{display:none}.page.active{display:block}.drawer{position:fixed;right:-320px;top:0;width:320px;height:100%;background:#fff}.drawer.active{right:0}.modal-overlay{display:none;position:fixed;inset:0}.modal-overlay.active{display:block}.modal{margin:40px;background:#fff}
+</style></head><body>
+<main>
+  <section class="page active" id="alpha-page"><h1>甲页面</h1><button onclick="showAlphaDrawer()">新增甲项</button><button onclick="showDeleteModal('甲')">删除甲项</button><button id="open-wizard">打开向导</button></section>
+  <section class="page" id="beta-page"><h1>乙页面</h1><button onclick="showDeleteModal('乙')">删除乙项</button></section>
+</main>
+<div class="drawer" id="alpha-drawer"><h2 class="drawer-title">新增甲项</h2><button onclick="showNestedModal()">继续设置</button></div>
+<div class="modal-overlay" id="nested-modal"><div class="modal"><h2 class="modal-title">继续设置</h2><button onclick="showDeepDrawer()">深层设置</button></div></div>
+<div class="drawer" id="deep-drawer"><h2 class="drawer-title">深层设置</h2></div>
+<section id="wizard-surface" hidden><h2>配置向导</h2></section>
+<div class="modal-overlay" id="delete-modal"><div class="modal"><h2 class="modal-title">确认删除</h2></div></div>
+<script>
+function showAlphaDrawer() { document.getElementById('alpha-drawer').classList.add('active') }
+function showNestedModal() { document.getElementById('nested-modal').classList.add('active') }
+function showDeepDrawer() { document.getElementById('deep-drawer').classList.add('active') }
+function showDeleteModal() { document.getElementById('delete-modal').classList.add('active') }
+function launchWizard() { const target = document.getElementById('wizard-surface'); target.hidden = false }
+document.getElementById('open-wizard').addEventListener('click', launchWizard)
+</script>
+</body></html>
