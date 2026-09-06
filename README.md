@@ -15,7 +15,7 @@ Prototype HTML Editor 通过 Codex Skill 启动本地工作台，在浏览器中
 
 **核心定位：在浏览器中修改已有高保真 HTML 原型，保留原交互，通过版本副本完成交付。**
 
-** 在线体验：[编辑模型在线演示](https://www.pm-vibe.com/demo/share/20GrlY9H/) **
+**在线体验：[编辑模型在线演示](https://www.pm-vibe.com/demo/share/20GrlY9H/)**
 
 ## 核心价值
 
