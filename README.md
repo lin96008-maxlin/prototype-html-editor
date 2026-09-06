@@ -28,6 +28,8 @@ Prototype HTML Editor 通过 Codex Skill 启动本地工作台，在浏览器中
 
 > 以下截图来自通用 CRM 演示原型，使用 `1920×1080` 浏览器视口。
 
+- [编辑模型在线演示](https://www.pm-vibe.com/demo/share/20GrlY9H/)
+
 ### 预览模式：完整运行原型
 
 预览模式隐藏编辑栏，原型按桌面画面自适应显示。导航、系统页签、表单、弹窗和原有 JavaScript 可以继续操作。
